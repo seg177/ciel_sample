@@ -1,5 +1,5 @@
 // App.js 메인
-// Redux 및 Redux Saga 구성
+// 03. Redux 및 03. Redux Saga 구성
 
 import React from 'react';
 import type {Node} from 'react';
@@ -10,7 +10,10 @@ import {
 import {applyMiddleware, legacy_createStore} from 'redux';
 import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import FunctionComponentSample from "./src/01.Component/FunctionComponentSample";
+import FunctionComponentSample from "./src/01. Component/FunctionComponentSample";
+import rootReducer from "./src/03. Redux/RootReducer";
+import {rootSaga} from "./src/03. Redux/RootSaga";
+import LifeCycleSample from "./src/01. Lifecycle/LifeCycleSample";
 
 // 01. Saga 미들웨어 생성
 const sagaMiddleware = createSagaMiddleware();
@@ -31,6 +34,7 @@ const App: () => Node = () => {
       <Provider store={store}>
           <SafeAreaView>
               <FunctionComponentSample />
+              {/*<LifeCycleSample />*/}
           </SafeAreaView>
       </Provider>
   );
