@@ -1,5 +1,4 @@
 package com.rn_ciel_study;
-
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {

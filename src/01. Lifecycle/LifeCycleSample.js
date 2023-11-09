@@ -47,8 +47,14 @@ class LifeCycleSample extends Component{
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
         // this.props, this.state가 변경되어 있는 상태
         // prevProps와 prevState, getSnapshotBeforeUpdate로 반환된 값 확인 및 비교가능
-        console.log('[LifeCycle] componentDidUpdate ', prevProps, prevState, this.state);
+        console.log('[LifeCycle] componentDidUpdate ', prevState, this.state);
     }
+
+    // 05. 종료 단계
+    componentWillUnmount() {
+        console.log('[LifeCycle] componentWillUnmount');
+    }
+
 
     // 메세지 변경 함수
     setMessage(msg){

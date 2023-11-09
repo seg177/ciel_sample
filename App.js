@@ -3,17 +3,14 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {
-  SafeAreaView,
-} from 'react-native';
 
 import {applyMiddleware, legacy_createStore} from 'redux';
 import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import FunctionComponentSample from "./src/01. Component/FunctionComponentSample";
 import rootReducer from "./src/03. Redux/RootReducer";
-import {rootSaga} from "./src/03. Redux/RootSaga";
-import LifeCycleSample from "./src/01. Lifecycle/LifeCycleSample";
+import {rootSaga} from "./src/04. Redux-Saga/RootSaga";
+import Navigator from "./src/Navigator";
+
 
 // 01. Saga 미들웨어 생성
 const sagaMiddleware = createSagaMiddleware();
@@ -32,10 +29,7 @@ sagaMiddleware.run(rootSaga);
 const App: () => Node = () => {
   return (
       <Provider store={store}>
-          <SafeAreaView>
-              <FunctionComponentSample />
-              {/*<LifeCycleSample />*/}
-          </SafeAreaView>
+          <Navigator/>
       </Provider>
   );
 };

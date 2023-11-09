@@ -1,5 +1,5 @@
 //Root Saga
-import {all, call, put, select} from "redux-saga/effects";
+import {all} from "redux-saga/effects";
 import {testSaga} from "./Store/Saga";
 
 export function* rootSaga(){
